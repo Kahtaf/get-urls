@@ -29,7 +29,9 @@ module.exports = (text, options = {}) => {
 	const add = url => {
 		try {
 			returnValue.add(normalizeUrl(url.trim().replace(/\.+$/, ''), options));
-		} catch {}
+		} catch {
+			returnValue.add(url.trim().replace(/\.+$/, ''));
+		}
 	};
 
 	const urls = text.match(
